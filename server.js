@@ -1,6 +1,11 @@
 var express = require('express');
 var request = require('request');
+var bodyParser = require('body-parser');
 var app = express();
+
+app.use(bodyParser.urlencoded({
+  extended:true
+}));
 
 app.set("view engine", "ejs");
 
@@ -46,4 +51,21 @@ app.get('/', function (req, res) {
   });
 });
 
+app.get('/newuser', function (req, res) {
+  res.render("newuser");
+});
+
+app.post('/newuser', function (req, res) {
+  request({
+    method: "POST",
+    uri: "http://daretodiscover.herokuapp.com/users",
+    formData: {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      username: req.body.username
+    }
+  }, function(error, response, body) {
+    res.redirect("/users");
+  });
+});
 var server = app.listen(3000);
