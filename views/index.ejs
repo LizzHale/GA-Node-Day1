@@ -27,6 +27,8 @@
         <td> <%= users[i].created_at %> </td>
         <td> <%= users[i].updated_at %> </td>
         <td> <%= users[i].id %> </td>
+        <td><a href="/users/<%= users[i].id %>/edit">Edit User</a></td>
+        <td><a href="/users/<%= users[i].id %>/delete">Delete User</a></td>
       </tr>
       <% } %>
     </tbody>
