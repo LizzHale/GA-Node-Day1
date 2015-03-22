@@ -63,12 +63,12 @@ app.put('/users/:id/edit', function (req, res) {
   });
 });
 
-app.delete("/user/:id/delete", function(req, res) {
+app.delete('/users/:id', function(req, res) {
   request({
     method: "DELETE",
     uri: "http://daretodiscover.herokuapp.com/users/" + req.params.id
   }, function(error, response, body) {
-    res.redirect("/user");
+    res.redirect("/users");
   });
 });
 

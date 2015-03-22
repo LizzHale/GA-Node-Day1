@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <title>Form</title>
+</head>
+<body>
+  <div class="container">
+    <form method="post" action="/users/<%= userInfo.id %>/edit?_method=put" class="form-horizontal">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input name="username" type="text" class="form-control" id="username" value="<%= userInfo.username %>">
+    </div>
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input name="firstname" type="text" class="form-control" id="firstname" value="<%= userInfo.firstname %>">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input name="lastname" type="text" class="form-control" id="lastname" value="<%= userInfo.lastname %>">
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input name="age" type="text" class="form-control" id="age" value="<%= userInfo.age %>">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+</body>
+</html>
